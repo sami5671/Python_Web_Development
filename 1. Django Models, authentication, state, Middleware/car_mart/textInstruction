@@ -1,0 +1,6 @@
+1. django-admin startproject car_mart
+2. cd car_mart
+3. django-admin startapp cars
+
+
+4. python manage.py makemigrations

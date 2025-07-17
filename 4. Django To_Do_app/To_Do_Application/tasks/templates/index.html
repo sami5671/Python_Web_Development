@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="container">
+    <h1>Home</h1>
+
+    <div>
+        Filter:
+        <a href="{% url 'home' %}/">All</a>
+        <a href="{% url 'home' %}/?status=completed">Completed</a>
+        <a href="{% url 'home' %}/?status=remaining">Remaining</a>
+        </a>
+    </div>
+
+    <div>
+        Search:
+        <form action="" method="get">
+            <input type="text" name="ghorardim" value="{{ search }}">
+            <button type="submit" class="btn btn-outline-primary">Search</button>
+        </form>
+    </div>
+
+    <ul>
+        {% for task in tasks %}
+        <li>{{ task.title }}</li>
+        {% endfor %}
+    </ul>
+
+</div>
+
+{% endblock %}

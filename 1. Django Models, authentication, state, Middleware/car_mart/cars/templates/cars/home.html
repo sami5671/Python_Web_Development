@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+
+<body>
+    <h1> Here is All Car Info</h1>
+    {% for car in car_details %}
+    <p>{{car.id}}</p>
+    <p>{{car.car_name}}</p>
+    <p>{{car.car_company}}</p>
+    <p>{{car.ceo_name}}</p>
+    <p>{{car.fuel_names}}</p>
+    <p>-------------------------</p>
+    {% endfor %}
+</body>
+
+</html>

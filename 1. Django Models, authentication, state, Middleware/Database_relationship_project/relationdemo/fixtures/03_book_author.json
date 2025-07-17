@@ -1,0 +1,84 @@
+[
+  {
+    "model": "relationdemo.author",
+    "pk": 1,
+    "fields": {
+      "name": "J.K. Rowling",
+      "bio": "British author best known for Harry Potter series"
+    }
+  },
+  {
+    "model": "relationdemo.author",
+    "pk": 2,
+    "fields": {
+      "name": "George R.R. Martin",
+      "bio": "American novelist, screenwriter, and television producer"
+    }
+  },
+  {
+    "model": "relationdemo.author",
+    "pk": 3,
+    "fields": {
+      "name": "Stephen King",
+      "bio": "American author of horror, supernatural fiction, and fantasy"
+    }
+  },
+  {
+    "model": "relationdemo.author",
+    "pk": 4,
+    "fields": {
+      "name": "Neil Gaiman",
+      "bio": "English author of short fiction, novels, comic books, and films"
+    }
+  },
+  {
+    "model": "relationdemo.book",
+    "pk": 1,
+    "fields": {
+      "title": "Harry Potter and the Philosopher's Stone",
+      "year": "1997",
+      "isbn": "9780747532699",
+      "authors": [1]
+    }
+  },
+  {
+    "model": "relationdemo.book",
+    "pk": 2,
+    "fields": {
+      "title": "A Game of Thrones",
+      "year": "1996",
+      "isbn": "9780553103540",
+      "authors": [2]
+    }
+  },
+  {
+    "model": "relationdemo.book",
+    "pk": 3,
+    "fields": {
+      "title": "The Shining",
+      "year": "1977",
+      "isbn": "9780385121675",
+      "authors": [3]
+    }
+  },
+  {
+    "model": "relationdemo.book",
+    "pk": 4,
+    "fields": {
+      "title": "American Gods",
+      "year": "2001",
+      "isbn": "9780380973651",
+      "authors": [4]
+    }
+  },
+  {
+    "model": "relationdemo.book",
+    "pk": 5,
+    "fields": {
+      "title": "Good Omens",
+      "year": "1990",
+      "isbn": "9780575048003",
+      "authors": [4]
+    }
+  }
+]

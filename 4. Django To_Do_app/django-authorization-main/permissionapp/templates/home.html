@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Welcome to Django Authorization</h1>
+
+    {% if user.is_superuser %}
+    <div>
+        <h2>Only For Admin</h2>
+        <p>Only admin can see this page</p>
+    </div>
+    {% endif %}
+
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+[
+  {
+    "model": "relationdemo.expensecategory",
+    "pk": 1,
+    "fields": {
+      "name": "Food",
+      "description": "Food and dining expenses"
+    }
+  },
+  {
+    "model": "relationdemo.expensecategory",
+    "pk": 2,
+    "fields": {
+      "name": "Transportation",
+      "description": "Transportation related expenses"
+    }
+  },
+  {
+    "model": "relationdemo.expensecategory",
+    "pk": 3,
+    "fields": {
+      "name": "Entertainment",
+      "description": "Entertainment and leisure activities"
+    }
+  },
+  {
+    "model": "relationdemo.expensecategory",
+    "pk": 4,
+    "fields": {
+      "name": "Utilities",
+      "description": "Monthly utility bills and services"
+    }
+  },
+  {
+    "model": "relationdemo.expense",
+    "pk": 1,
+    "fields": {
+      "category": 1,
+      "amount": "25.50",
+      "date": "2024-02-15",
+      "description": "Lunch at Italian restaurant"
+    }
+  },
+  {
+    "model": "relationdemo.expense",
+    "pk": 2,
+    "fields": {
+      "category": 2,
+      "amount": "35.00",
+      "date": "2024-02-15",
+      "description": "Uber ride to airport"
+    }
+  },
+  {
+    "model": "relationdemo.expense",
+    "pk": 3,
+    "fields": {
+      "category": 1,
+      "amount": "150.75",
+      "date": "2024-02-14",
+      "description": "Grocery shopping for the week"
+    }
+  },
+  {
+    "model": "relationdemo.expense",
+    "pk": 4,
+    "fields": {
+      "category": 3,
+      "amount": "45.00",
+      "date": "2024-02-13",
+      "description": "Movie tickets and snacks"
+    }
+  },
+  {
+    "model": "relationdemo.expense",
+    "pk": 5,
+    "fields": {
+      "category": 4,
+      "amount": "120.00",
+      "date": "2024-02-01",
+      "description": "Electricity bill payment"
+    }
+  },
+  {
+    "model": "relationdemo.expense",
+    "pk": 6,
+    "fields": {
+      "category": 1,
+      "amount": "35.50",
+      "date": "2024-02-20",
+      "description": "Family Dinner"
+    }
+  }
+]
