@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.decorators import action
+from rest_framework.filters import OrderingFilter, SearchFilter
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
@@ -20,8 +21,10 @@ class TaskViewSet(ModelViewSet):
     # permission_classes = [AllowAny]
     permission_classes = [IsAuthenticated]
 
-    filter_backends = [DjangoFilterBackend]
+    filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
     filterset_fields = ["completed"]
+    search_fields = ["title", "description"]
+    ordering_fields = ["id", "title", "completed", "created_at"]
 
     def get_queryset(self):
         return super().get_queryset().filter(user=self.request.user)
