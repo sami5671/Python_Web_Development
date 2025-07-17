@@ -1,19 +1,34 @@
 from django.shortcuts import render
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework.decorators import action
+from rest_framework.permissions import AllowAny, IsAuthenticated
+from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
-from .models import Task, Contact, Author, Book
+
+from .models import Author, Book, Contact, Task
 from .serializers import (
-    TaskSerializer,
-    ContactSerializer,
     AuthorSerializer,
     BookSerializer,
+    ContactSerializer,
+    TaskSerializer,
 )
-from rest_framework.decorators import action
-from rest_framework.response import Response
 
 
 class TaskViewSet(ModelViewSet):
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
+    # permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
+
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ["completed"]
+
+    def get_queryset(self):
+        return super().get_queryset().filter(user=self.request.user)
+
+    # automatically take the user
+    def perform_create(self, serializer):
+        return serializer.save(user=self.request.user)
 
     @action(detail=False, methods=["get"])
     def say_hello(self, request):

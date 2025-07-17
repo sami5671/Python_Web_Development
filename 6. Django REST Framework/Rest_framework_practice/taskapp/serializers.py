@@ -1,19 +1,20 @@
 from rest_framework import serializers
-from .models import Task, Contact, Author, Book
+
+from .models import Author, Book, Contact, Task
 
 
 class TaskSerializer(serializers.ModelSerializer):
     class Meta:
         model = Task
-        fields = "__all__"  # Include all fields
-        # fields = [
-        #     "id",
-        #     "title",
-        #     "description",
-        #     "completed",
-        #     "created_at",
-        # ]  # Exclude 'user'
-        # read_only_fields = ["id", "created_at"]
+        # fields = "__all__"  # Include all fields
+        fields = [
+            "id",
+            "title",
+            "description",
+            "completed",
+            "created_at",
+        ]  # Exclude 'user'
+        read_only_fields = ["id", "created_at"]
 
 
 class ContactSerializer(serializers.ModelSerializer):

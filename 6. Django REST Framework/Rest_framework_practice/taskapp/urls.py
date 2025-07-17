@@ -1,6 +1,8 @@
-from django.urls import path, include
+from django.urls import include, path
 from rest_framework.routers import DefaultRouter
-from .views import TaskViewSet, ContactViewSet, AuthorViewSet, BookViewSet
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+
+from .views import AuthorViewSet, BookViewSet, ContactViewSet, TaskViewSet
 
 router = DefaultRouter()
 router.register("tasks", TaskViewSet)
@@ -10,4 +12,5 @@ router.register("books", BookViewSet)
 
 urlpatterns = [
     path("api/", include(router.urls)),
+    path("login/", TokenObtainPairView.as_view(), name="login"),
 ]
