@@ -1,0 +1,14 @@
+Here's the text from the image:
+
+0. Review DRF & Request Methods
+1. Token Authentication with JWT
+2. Permission Classes
+3. Add user to Model & Filter based on User
+4. Filtering Data
+5. Searching & Ordering
+6. Pagination
+7. Throttling / Rate Limiting
+8. Best Practices:
+    - API BASE URL
+    - API CRUD URLS
+    - Documentation
