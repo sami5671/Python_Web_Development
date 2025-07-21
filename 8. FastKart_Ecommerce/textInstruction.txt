@@ -17,3 +17,7 @@
 -------- Creating SuperUser and accessing admin panel -------
 1. python manage.py createsuperuser
 2. Register your models in the admin.py
+
+
+----------- When we want to install requirements.txt packages -----------
+1. pip install -r requirements.txt
