@@ -112,3 +112,20 @@ def set_new_password(request):
         messages.success(request, "Password updated successfully.")
         return redirect("profile")
     return render(request, "accounts/new-password.html")
+
+
+@login_required
+def user_dashboard(request):
+    if request.method == "POST":
+        user = request.user
+
+        user.email = request.POST.get("email", user.email)
+        user.mobile = request.POST.get("mobile", user.mobile)
+        user.address_line_1 = request.POST.get("address_line_1", user.address_line_1)
+        user.address_line_2 = request.POST.get("address_line_2", user.address_line_2)
+        user.city = request.POST.get("city", user.city)
+        user.postcode = request.POST.get("postcode", user.postcode)
+        user.country = request.POST.get("country", user.country)
+        user.save()
+
+    return render(request, "accounts/profile.html")

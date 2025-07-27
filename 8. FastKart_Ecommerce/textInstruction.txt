@@ -6,7 +6,8 @@
 5. django-admin startproject blog_project .
 6. python manage.py startapp blog
 
-
+--------------- deactivate venv -------
+1. deactivate
 
 -------- Creating model and model migration --------
 1. write model 
