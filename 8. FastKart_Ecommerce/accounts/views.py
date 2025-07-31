@@ -94,6 +94,8 @@ def reset_password_confirm(request, uidb64, token):
     if user and default_token_generator.check_token(user, token):
         user.is_verified = True
         user.save()
+        # ✅ Set the backend manually to avoid ValueError
+        user.backend = "django.contrib.auth.backends.ModelBackend"
         login(request, user)
         return redirect("new-password")
     else:

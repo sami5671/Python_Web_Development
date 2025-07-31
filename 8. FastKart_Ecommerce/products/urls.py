@@ -1,3 +1,5 @@
 from django.urls import include, path
 
-urlpatterns = []
+from . import views
+
+urlpatterns = [path("", views.home)]
