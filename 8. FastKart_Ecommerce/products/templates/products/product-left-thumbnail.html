@@ -217,12 +217,12 @@
                   </div>
                 </div>
                 <a
-                  href="#"
+                  href="{% url 'add_cart' product.slug %}"
                   class="btn btn-md bg-dark cart-button text-white w-100"
                   >Add To Cart</a
                 >
                 <a
-                  href="#"
+                  href="{% url 'remove_cart' product.slug %}"
                   class="btn btn-md bg-dark cart-button text-white w-100"
                   >Remove From Cart</a
                 >
