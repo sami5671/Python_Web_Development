@@ -1869,7 +1869,11 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="" method="POST" class="product-review-form">
+        <form
+          action="{% url 'submit_review' product.slug %}"
+          method="POST"
+          class="product-review-form"
+        >
           {% csrf_token %}
           <div class="product-wrapper">
             <div class="product-image">
