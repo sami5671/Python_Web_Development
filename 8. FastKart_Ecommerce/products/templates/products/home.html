@@ -79,7 +79,8 @@
             <div>
                 <div class="banner-contain-3 hover-effect">
                     <a href="javascript:void(0)">
-                        <img src="" {% static 'assets/images/grocery/banner/111.png' %}" class="blur-up lazyload bg-img" alt="">
+                        <img src="" {% static 'assets/images/grocery/banner/111.png' %}""
+                            class="blur-up lazyload bg-img" alt="">
                     </a>
                     <div class="banner-detail p-center-left w-75 banner-p-sm mend-auto">
                         <div>
@@ -155,9 +156,7 @@
                                         alt="{{category.name}}">
                                 </a>
                                 <!-- #TODO: set category_products page -->
-                                <button
-                                 {% comment %} onclick="location.href = '{% url "category_products" category.slug %}';"  {% endcomment %}
-                                 class="btn shop-button">
+                                <button onclick="location.href = '{% url "category_products" category.slug %}';" class="btn shop-button">
                                     <span>Shop Now</span>
                                     <i class="fas fa-angle-right"></i>
                                 </button>
