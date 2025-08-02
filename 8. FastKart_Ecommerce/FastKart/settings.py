@@ -141,7 +141,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 AUTH_USER_MODEL = "accounts.CustomUser"
 
 # Email Configuration
-
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
@@ -164,4 +163,14 @@ AUTHENTICATION_BACKENDS = [
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
+# delivery charge
 DELIVERY_CHARGE = 120
+
+
+# payment info
+# SSLCOMMERZ_IS_SANDBOX = env("SSLCOMMERZ_IS_SANDBOX")
+# SSLCOMMERZ_STORE_ID = env("SSLCOMMERZ_STORE_ID")
+# SSLCOMMERZ_STORE_PASS = env("SSLCOMMERZ_STORE_PASS")
+SSLCOMMERZ_IS_SANDBOX = True
+SSLCOMMERZ_STORE_ID = "samic688e19d723588"
+SSLCOMMERZ_STORE_PASS = "samic688e19d723588@ssl"

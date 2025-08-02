@@ -22,3 +22,9 @@
 
 ----------- When we want to install requirements.txt packages -----------
 1. pip install -r requirements.txt
+
+ 
+ ----------- payment integration -----------
+1. pip install sslcommerz-python-api
+2. env setup 
+3. write code 
