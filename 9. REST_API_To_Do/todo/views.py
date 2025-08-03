@@ -45,6 +45,7 @@ class TodoListApiView(View):
 
     def post(self, request):
         formatted_data = json.loads(request.body)
+        print(formatted_data)
 
         created_todo = Todo.objects.create(
             title=formatted_data["title"],
@@ -60,3 +61,13 @@ class TodoListApiView(View):
         data_to_return = json.dumps(data_to_return)
 
         return HttpResponse(data_to_return, content_type="application/json")
+
+
+# issues
+# 1. Shob custom korte hocche (convert) ✅
+# 2. For loop chalay list banay then kaj korte hocche ✅
+# 3. JSON string e convert korte hocche ✅
+# 4. We have to set content type manually ✅
+# 5. CSRF Issue ✅
+# 6. Format data on receive ✅
+# 7. Create data manually ✅
