@@ -1,6 +1,6 @@
 --- setup virtual env ----
 1. python -m venv venv
-2. venv\Scripts\activate.bat || (source env/Scripts/activate)
+2. venv\Scripts\activate.bat || (source venv/Scripts/activate)
 3. pip install django
 4. pip freeze
 5. django-admin startproject blog_project .
