@@ -18,9 +18,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from todo.views import todo_list
+from todo.views import TodoListApiView, TodoListView, todo_list
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("todo/", todo_list, name="todo_list"),
+    path("todos/", TodoListView.as_view(), name="todo_list"),
+    path("todosapi/", TodoListApiView.as_view(), name="todo_list_api"),
 ]
