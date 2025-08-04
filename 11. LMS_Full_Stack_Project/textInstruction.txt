@@ -1,0 +1,30 @@
+--- setup virtual env ----
+1. python -m venv venv
+2. venv\Scripts\activate.bat || (source venv/Scripts/activate)
+3. pip install django
+4. pip freeze
+5. django-admin startproject blog_project .
+6. python manage.py startapp blog
+
+--------------- deactivate venv -------
+1. deactivate
+
+-------- Creating model and model migration --------
+1. write model 
+2. python manage.py makemigrations (it will create migration file)
+3. python manage.py migrate
+4. python manage.py showmigrations (to watch all migrations)
+
+-------- Creating SuperUser and accessing admin panel -------
+1. python manage.py createsuperuser
+2. Register your models in the admin.py
+
+
+----------- When we want to install requirements.txt packages -----------
+1. pip install -r requirements.txt
+
+ 
+ ----------- payment integration -----------
+1. pip install sslcommerz-python-api
+2. env setup 
+3. write code 
