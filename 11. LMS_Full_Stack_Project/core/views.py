@@ -17,6 +17,7 @@ from .serializers import (
 
 # Create your views here.
 @api_view(["GET", "POST"])
+@permission_classes([IsAuthenticated])
 def category_list_create(request):
     if request.method == "GET":
         categories = Category.objects.all()
@@ -35,12 +36,13 @@ def category_list_create(request):
 
 
 @api_view(["GET", "POST"])
+@permission_classes([IsAuthenticated])
 def course_list_create(request):
     if request.method == "GET":
         if request.user.role == "admin":
             courses = Course.objects.all()
         elif request.user.role == "teacher":
-            courses = Course.objects.filter(teacher=request.user)
+            courses = Course.objects.filter(instructor_id=request.user)
         elif request.user.role == "student":
             courses = Course.objects.all()  # or add filter for enrolled courses
         else:
@@ -63,6 +65,7 @@ def course_list_create(request):
 
 
 @api_view(["GET", "PUT", "DELETE"])
+@permission_classes([IsAuthenticated])
 def course_detail(request, pk):
     try:
         course = Course.objects.get(pk=pk)

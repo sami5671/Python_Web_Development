@@ -51,9 +51,7 @@ class QuestionAnswer(BaseModel):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return (
-            f"{self.user_id.username} --> {self.lesson_id.title} --> {self.description}"
-        )
+        return f"{self.user.username} --> {self.lesson.title} --> {self.description}"
 
 
 class Enrollment(BaseModel):
@@ -68,4 +66,4 @@ class Enrollment(BaseModel):
     course_id = models.ForeignKey(Course, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"{self.student.username} - {self.course.title}"
+        return f"{self.student_id.username} - {self.course_id.title}"

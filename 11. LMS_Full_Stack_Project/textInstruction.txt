@@ -38,3 +38,7 @@
 2. Write models for all tables with relationship 
 3. Write serializers for those models
 4. Admin Register
+5. Write views 
+6. Write Urls 
+7. Set Up media files configurations
+8. Check apis in Postman
