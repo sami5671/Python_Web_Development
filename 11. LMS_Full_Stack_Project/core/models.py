@@ -18,8 +18,10 @@ class Course(BaseModel):
     banner = models.ImageField(upload_to="course_banners/")
     price = models.FloatField()
     duration = models.FloatField()
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    instructor = models.ForeignKey(User, on_delete=models.CASCADE)
+    category_id = models.ForeignKey(Category, on_delete=models.CASCADE)
+    instructor_id = models.ForeignKey(
+        User, on_delete=models.CASCADE, limit_choices_to={"role": "teacher"}
+    )
 
     def __str__(self):
         return self.title
@@ -40,7 +42,7 @@ class Material(BaseModel):
     description = models.TextField()
     file_type = models.CharField(max_length=100)
     file = models.FileField(upload_to="materials/")
-    course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    course_id = models.ForeignKey(Course, on_delete=models.CASCADE)
 
 
 class QuestionAnswer(BaseModel):
@@ -60,10 +62,10 @@ class Enrollment(BaseModel):
     is_completed = models.BooleanField(default=False)
     is_certificate_ready = models.BooleanField(default=False)
     total_mark = models.FloatField(default=0)
-    student = models.ForeignKey(
+    student_id = models.ForeignKey(
         User, on_delete=models.CASCADE, limit_choices_to={"role": "student"}
     )
-    course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    course_id = models.ForeignKey(Course, on_delete=models.CASCADE)
 
     def __str__(self):
         return f"{self.student.username} - {self.course.title}"

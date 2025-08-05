@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-)iqr+%^u-y^)2i^bw9bx6u2pkorc!it=y5px2b%adf!oaf6kub"
+SECRET_KEY = "django-insecure-7l_vgpkjmkxv3hx8d3dxtwct&+=6mbnfd7qb%$#c(!*ba9&p9-"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,29 +37,11 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "drf_yasg",
     "rest_framework",
-    "rest_framework_swagger",
-    "users",
     "core",
+    "users",
 ]
-SWAGGER_SETTINGS = {
-    "SECURITY_DEFINITIONS": {
-        "Bearer": {
-            "type": "apiKey",
-            "in": "header",
-            "name": "Authorization",
-            "description": "Enter JWT token like: **Bearer &lt;your_token&gt;**",
-        }
-    },
-    "USE_SESSION_AUTH": False,
-}
 
-REST_FRAMEWORK = {
-    "DEFAULT_AUTHENTICATION_CLASSES": (
-        "rest_framework_simplejwt.authentication.JWTAuthentication",
-    )
-}
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -71,6 +53,7 @@ MIDDLEWARE = [
 ]
 
 AUTH_USER_MODEL = "users.User"
+
 ROOT_URLCONF = "lms_backend.urls"
 
 TEMPLATES = [
@@ -136,9 +119,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = "/static/"
-MEDIA_ROOT = BASE_DIR / "media"
-MEDIA_URL = "/media/"
+STATIC_URL = "static/"
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 

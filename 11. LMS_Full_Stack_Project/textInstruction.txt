@@ -28,3 +28,13 @@
 1. pip install sslcommerz-python-api
 2. env setup 
 3. write code 
+
+
+
+
+
+------------------ To work in a django REST api ---------------------
+1. Create project & apps setup
+2. Write models for all tables with relationship 
+3. Write serializers for those models
+4. Admin Register
