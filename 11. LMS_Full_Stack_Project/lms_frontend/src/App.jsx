@@ -3,6 +3,7 @@ import LoginPage from "./pages/LoginPage";
 import ForgotPasswordPage from "./pages/ForgotPasswordPage";
 import DashboardPage from "./pages/DashboardPage";
 import { useAuth } from "./hooks/useAuth";
+import RegisterPage from "./pages/RegisterPage";
 
 function AppContent() {
   const { token, page, goTo } = useAuth();
@@ -17,6 +18,7 @@ function AppContent() {
             {page === "login" ? (
               <>
                 <LoginPage />
+                <RegisterPage />
               </>
             ) : page === "forgot-password" ? (
               <>

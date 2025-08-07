@@ -14,3 +14,9 @@ class UserSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         validated_data["password"] = make_password(validated_data["password"])
         return super().create(validated_data)
+
+    def update(self, instance, validated_data):
+        # Only hash password if it's provided in the update
+        if "password" in validated_data and validated_data["password"]:
+            validated_data["password"] = make_password(validated_data["password"])
+        return super().update(instance, validated_data)

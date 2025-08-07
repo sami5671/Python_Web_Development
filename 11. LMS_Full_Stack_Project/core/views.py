@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from drf_yasg.utils import swagger_auto_schema
 from rest_framework import status
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
@@ -16,6 +17,7 @@ from .serializers import (
 
 
 # Create your views here.
+@swagger_auto_schema(method="post", request_body=CategorySerializer)
 @api_view(["GET", "POST"])
 @permission_classes([IsAuthenticated])
 def category_list_create(request):
@@ -35,6 +37,7 @@ def category_list_create(request):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
+@swagger_auto_schema(method="post", request_body=CourseSerializer)
 @api_view(["GET", "POST"])
 @permission_classes([IsAuthenticated])
 def course_list_create(request):
@@ -64,6 +67,7 @@ def course_list_create(request):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
+@swagger_auto_schema(method="put", request_body=CourseSerializer)
 @api_view(["GET", "PUT", "DELETE"])
 @permission_classes([IsAuthenticated])
 def course_detail(request, pk):
@@ -101,6 +105,7 @@ def course_detail(request, pk):
         return Response({"detail": "Course deleted"}, status=status.HTTP_204_NO_CONTENT)
 
 
+@swagger_auto_schema(method="post", request_body=LessonSerializer)
 @api_view(["GET", "POST"])
 def lesson_list_create(request):
     if request.method == "GET":
@@ -115,6 +120,7 @@ def lesson_list_create(request):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
+@swagger_auto_schema(method="post", request_body=MaterialSerializer)
 @api_view(["GET", "POST"])
 def material_list_create(request):
     if request.method == "GET":
@@ -129,6 +135,7 @@ def material_list_create(request):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
+@swagger_auto_schema(method="post", request_body=EnrollmentSerializer)
 @api_view(["GET", "POST"])
 def enrollment_list_create(request):
     if request.method == "GET":
@@ -143,6 +150,7 @@ def enrollment_list_create(request):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
+@swagger_auto_schema(method="post", request_body=QuestionAnswerSerializer)
 @api_view(["GET", "POST"])
 def questionanswer_list_create(request):
     if request.method == "GET":
